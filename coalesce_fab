@@ -1,0 +1,19 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+my %h;
+
+local $\ = "\n";
+local $" = "\n\t";
+
+while (<>) {
+    m/\[([^\]]+)\] out\: (.+)/ && push @{$h{$1}}, $2;
+}
+
+for (sort keys %h) {
+    print "[$_]";
+    print "\t@{$h{$_}}";
+    print "";
+}

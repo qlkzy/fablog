@@ -1,0 +1,3 @@
+#!/bin/bash
+
+coalesce_fab `lastfablog`
